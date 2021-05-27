@@ -57,7 +57,7 @@ const ExpenseForm =
                 maxLength="25"
                 required="required"/>
               <div className="cost">
-                <label htmlFor="cost">Amount Spent</label>
+                <label htmlFor="cost"></label>
                 <input 
                   type="text" 
                   name="cost" 

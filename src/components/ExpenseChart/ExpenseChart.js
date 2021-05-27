@@ -29,11 +29,9 @@ const sumTotals = (totals) => {
       ];
 
     return (
-    <PieChart width={350} height={350}>
+    <PieChart width={240} height={240}>
         <Pie
           data={data}
-          cx={200}
-          cy={200}
           innerRadius={80}
           outerRadius={120}
           fill="#8884d8"

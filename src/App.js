@@ -4,8 +4,6 @@ import ExpenseList from './components/ExpenseList/ExpenseList';
 import ExpenseChart from './components/ExpenseChart/ExpenseChart';
 import './App.css';
 
-
-
 function App() {
   const [categoryInput, setCategoryInput] = useState('');
   const [expenseInput, setExpenseInput] = useState('');
@@ -53,7 +51,7 @@ function App() {
        expenses={expenses}
        setExpenses={setExpenses}
      />
-     <ExpenseList 
+      <ExpenseList 
       expenses={expenses}
       setExpenses={setExpenses}
      />
