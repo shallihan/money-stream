@@ -1,7 +1,7 @@
 import React from 'react';
 import { PieChart, Pie, Cell} from 'recharts';
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#6600FF" ];
+const COLORS = ['#064789', '#2766C7', '#4A86E1', '#BADEFC', '#21295C'];
 
 
 const ExpenseChart = ({totalHome, totalTravel, totalFood, totalMedia, totalBars}) => {
@@ -34,7 +34,7 @@ const sumTotals = (totals) => {
           data={data}
           innerRadius={80}
           outerRadius={120}
-          fill="#8884d8"
+          fill="#3E71BF"
           paddingAngle={5}
           dataKey="value"
         >

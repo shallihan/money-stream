@@ -2,4 +2,13 @@
     form {
         width: 365px;
     }
+
+    .card-background {
+        width: 426px;
+    }
+
+    .category-card-container {
+        width: 365px;
+        word-wrap: normal;
+    }
 }

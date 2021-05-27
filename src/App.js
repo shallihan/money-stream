@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ExpenseForm from './components/ExpenseForm/ExpenseForm';
 import ExpenseList from './components/ExpenseList/ExpenseList';
 import ExpenseChart from './components/ExpenseChart/ExpenseChart';
+import CategoryCard from './components/CategoryCard/CategoryCard';
 import './App.css';
 import './styles/media-queries.css';
 
@@ -77,6 +78,14 @@ function App() {
           expenses={expenses}
           setExpenses={setExpenses}
         />
+        <div className='card-background'>
+          <CategoryCard   
+            totalHome={totalHome}
+            totalTravel={totalTravel}
+            totalFood={totalFood}
+            totalMedia={totalMedia}
+            totalBars={totalBars}/>
+        </div>
       </div>
     </div>
   );
