@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import ExpenseForm from './components/ExpenseForm/ExpenseForm';
+import ExpenseList from './components/ExpenseList/ExpenseList';
 import './App.css';
+
 
 
 function App() {
@@ -21,7 +23,11 @@ function App() {
        setCostInput={setCostInput}
        expenses={expenses}
        setExpenses={setExpenses}
-      />
+     />
+     <ExpenseList 
+      expenses={expenses}
+      setExpenses={setExpenses}
+     />
      </div>
     </div>
   );
