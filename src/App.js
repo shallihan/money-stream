@@ -3,6 +3,7 @@ import ExpenseForm from './components/ExpenseForm/ExpenseForm';
 import ExpenseList from './components/ExpenseList/ExpenseList';
 import ExpenseChart from './components/ExpenseChart/ExpenseChart';
 import './App.css';
+import './styles/media-queries.css';
 
 function App() {
   const [categoryInput, setCategoryInput] = useState('');
