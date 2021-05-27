@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ExpenseForm from './components/ExpenseForm/ExpenseForm';
 import ExpenseList from './components/ExpenseList/ExpenseList';
 import ExpenseChart from './components/ExpenseChart/ExpenseChart';
@@ -9,6 +9,17 @@ function App() {
   const [expenseInput, setExpenseInput] = useState('');
   const [costInput, setCostInput] = useState('');
   const [expenses, setExpenses] = useState([]);
+
+  useEffect(() => {
+    getLocalInputs();
+  }, []);
+
+  useEffect(() => {
+    const saveLocalInputs = () => {
+      localStorage.setItem('expenses', JSON.stringify(expenses));
+    };
+    saveLocalInputs();
+  }, [expenses]);
 
   const home = "Home & Utilities";
   const travel =  "Travel";
@@ -26,6 +37,16 @@ function App() {
     }
   }
 
+  const getLocalInputs  = () => {
+    if(localStorage.getItem('expenses') === null) 
+    {
+      localStorage.setItem('expenses', JSON.stringify([]));
+    } else {
+        let expensesLocal = JSON.parse(localStorage.getItem('expenses'));
+        setExpenses(expensesLocal);
+    }
+  }
+
   let totalHome = getTotalCategory(home);
   let totalTravel = getTotalCategory(travel);
   let totalFood = getTotalCategory(food);
@@ -34,28 +55,28 @@ function App() {
 
   return (
     <div className="App">
-     <div className="container">
-     <ExpenseChart 
-       totalHome={totalHome}
-       totalTravel={totalTravel}
-       totalFood={totalFood}
-       totalMedia={totalMedia}
-       totalBars={totalBars}/>
-     <ExpenseForm 
-       categoryInput={categoryInput}
-       setCategoryInput={setCategoryInput}
-       expenseInput={expenseInput}
-       setExpenseInput={setExpenseInput} 
-       costInput={costInput}
-       setCostInput={setCostInput}
-       expenses={expenses}
-       setExpenses={setExpenses}
-     />
-      <ExpenseList 
-      expenses={expenses}
-      setExpenses={setExpenses}
-     />
-     </div>
+      <div className="container">
+        <ExpenseChart 
+          totalHome={totalHome}
+          totalTravel={totalTravel}
+          totalFood={totalFood}
+          totalMedia={totalMedia}
+          totalBars={totalBars}/>
+        <ExpenseForm 
+          categoryInput={categoryInput}
+          setCategoryInput={setCategoryInput}
+          expenseInput={expenseInput}
+          setExpenseInput={setExpenseInput} 
+          costInput={costInput}
+          setCostInput={setCostInput}
+          expenses={expenses}
+          setExpenses={setExpenses}
+        />
+        <ExpenseList 
+          expenses={expenses}
+          setExpenses={setExpenses}
+        />
+      </div>
     </div>
   );
 }
